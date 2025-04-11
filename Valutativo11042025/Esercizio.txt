@@ -1,0 +1,51 @@
+import datetime
+def assistente_virtuale(comando):
+    if comando == "Qual è la data di oggi?":
+        oggi = datetime.datetoday()             #date.datetoday è una classe che non esiste nella libreria importata. dobbiamo scrivere #dadetime.date.today()
+        risposta = "La data di oggi è " + oggi.strftime("%d/%m/%Y")
+    elif comando == "Che ore sono?":
+        ora_attuale = datetime.datetime.now().time()     #Nella classe datetime.datetime viene riportata ora e data, non c'è bisogno di aggiungere .time()
+        risposta = "L'ora attuale è " + ora_attuale.strftime("%H:%M")
+    elif comando == "Come ti chiami?":
+        risposta = "Mi chiamo Assistente Virtuale"
+    else:
+        risposta = "Non ho capito la tua domanda."
+    return risposta
+while True                              #Qui è obbligatorio inserire i due punti per incominciare il blocco di codice. Quindi dobbiamo scrivere While True:
+    comando_utente = input("Cosa vuoi sapere? ")
+    if comando_utente.lower() == "esci":
+        print("Arrivederci!")
+        break
+    else:
+        print(assistente_virtuale(comando_utente))
+
+
+
+
+Risposte :
+
+1) Capire cosa fa il programma senza eseguirlo: 
+ 
+ - Il programma crea un assistente virtuale che risponde a 3 domande: "Qual è la data di oggi?", "Che ore sono?" e "Come ti chiami?".
+
+
+2) Individuare nel codice sorgente le casistiche non standard che il programma non gestisce (esempio, comportamenti potenziali che non sono stati contemplati):
+
+
+ - Il programma esegue solo i comandi riportati alla risposta 1, qualsiasi altro comando che riporta: errori di ortografia, errori nella punteggiatura o confondendo maiuscole con minuscole, il programma risponderà con "Non ho capito la tua domanda"
+
+
+3) ; (4): - Gli errori sono segnalati riportando a fianco un commento (#)
+
+per facilitarne la lettura riporto gli errori corretti di seguito:
+
+ 1 - #date.datetoday è una classe che non esiste nella libreria importata. dobbiamo scrivere #dadetime.date.today()
+
+ 2 - #Nella classe datetime.datetime viene riportata ora e data, non c'è bisogno di aggiungere .time()
+
+ 3 -  #è obbligatorio inserire i due punti per incominciare il blocco di codice. Quindi dobbiamo scrivere While True:
+
+
+
+
+
